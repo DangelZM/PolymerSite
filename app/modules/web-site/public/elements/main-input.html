@@ -33,6 +33,7 @@
     <template>
         <paper-material>
             <div id="input" contenteditable="true" placeholder="Enter new post here..."></div>
+            <button id="send-btn" on-tap="send">Send</button>
         </paper-material>
     </template>
     <script>
@@ -41,6 +42,12 @@
             properties: {
                 route: {
                     type: String
+                }
+            },
+            send: function (e) {
+                var input = this.$.input;
+                if(input.textContent.length > 5) {
+                    this.fire('new-post', {post: input.textContent} )
                 }
             }
         });

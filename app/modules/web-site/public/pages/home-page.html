@@ -5,12 +5,22 @@
         }
     </style>
     <template>
-        <main-input></main-input>
-        <posts-list></posts-list>
+        <main-input id="input"></main-input>
+        <posts-list id="postlist"></posts-list>
     </template>
     <script>
         Polymer({
-            is: 'home-page'
+            is: 'home-page',
+            ready: function () {
+                var input = this.$.input;
+                var postlist = this.$.postlist;
+
+                input.addEventListener('new-post', function (e) {
+                    // send post to server
+                    // when response ok
+                    postlist.addPost(e.detail.post);
+                })
+            }
         });
     </script>
 </dom-module>

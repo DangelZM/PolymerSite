@@ -1,0 +1,45 @@
+<dom-module is="posts-list">
+    <style>
+        :host {
+            display: block;
+        }
+        paper-card {
+            display: block;
+            margin-top: 10px;
+        }
+
+        #posts-holder:last-child {
+            margin-bottom: 10px;
+        }
+    </style>
+    <template>
+        <template is="dom-repeat" items="[[posts]]" id="posts-holder">
+            <paper-card>
+                <div class="card-content">[[item.text]]</div>
+            </paper-card>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            is: "posts-list",
+            properties: {
+                posts: {
+                    type: Array,
+                    value: []
+                }
+            },
+            ready: function () {
+                this.posts = [
+                    {text: "Text 1"},
+                    {text: "Text 2"},
+                    {text: "Text 3"},
+                    {text: "Text 4"},
+                    {text: "Text 5"}
+                ]
+            },
+            addPost: function (text) {
+                this.push('posts', {text: text});
+            }
+        });
+    </script>
+</dom-module>
