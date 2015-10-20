@@ -1,0 +1,22 @@
+<dom-module id="not-found-page">
+    <style>
+        :host{
+            @apply(--layout-fit);
+            @apply(--layout-vertical);
+            @apply(--layout-center);
+            @apply(--layout-center-justified);
+        }
+    </style>
+    <template>
+        <paper-card id="not-found" heading="404 Not Found page">
+            <div class="card-content">
+                Page not found !
+            </div>
+        </paper-card>
+    </template>
+    <script>
+        Polymer({
+            is: 'not-found-page'
+        });
+    </script>
+</dom-module>

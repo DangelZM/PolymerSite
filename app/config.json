@@ -1,0 +1,11 @@
+{
+  "modules": {
+    "web-site":    { "mountpath": "/" }
+  },
+  "db": {
+    "url": "mongodb://localhost/polymer-site"
+  },
+  "cookieSecret" : "1s2df1sd35f65sd46f46ds",
+  "sessionSecret": "klksdlfdss2df21sd1f5sd",
+  "tokenSecret"  : "sdjkfkjew3fj3ije0efj22"
+}

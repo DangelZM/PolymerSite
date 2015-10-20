@@ -1,0 +1,66 @@
+<dom-module is="main-view">
+    <style>
+        #mainToolbar,
+        #mainToolbar ::content .toolbar-tools{
+            height: 48px;
+        }
+        #mainToolbar ::content > div,
+        .content {
+            max-width: 1190px;
+            margin: auto;
+        }
+        paper-tabs {
+            --paper-tabs-selection-bar-color: #fff;
+        }
+        paper-tab {
+            width: 100px;
+            --paper-tab-ink: #fff;
+        }
+        paper-tab a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .content {
+            margin: 20px auto;
+        }
+
+        app-sidebar {
+            width: 256px;
+            margin-right: 10px;
+        }
+    </style>
+    <template>
+        <paper-header-panel mode="standard">
+            <paper-toolbar id="mainToolbar">
+                <paper-tabs attr-for-selected="data-route" selected="{{route}}">
+                    <paper-tab link data-route="home">
+                        <a href="/" class="horizontal center-center layout">Home</a>
+                    </paper-tab>
+                    <paper-tab link data-route="contacts">
+                        <a href="/contacts" class="horizontal center-center layout">Contacts</a>
+                    </paper-tab>
+                </paper-tabs>
+            </paper-toolbar>
+            <div class="content fit layout horizontal">
+                <app-sidebar></app-sidebar>
+                <div class="flex">
+                    <iron-pages attr-for-selected="data-route" selected="{{route}}">
+                        <section data-route="home"><home-page></home-page></section>
+                        <section data-route="contacts"><contacts-page></contacts-page></section>
+                    </iron-pages>
+                </div>
+            </div>
+        </paper-header-panel>
+    </template>
+    <script>
+        Polymer({
+            is: "main-view",
+            properties: {
+                route: {
+                    type: String
+                }
+            }
+        });
+    </script>
+</dom-module>

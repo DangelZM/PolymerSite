@@ -1,0 +1,26 @@
+{
+  "name": "PolymerSite",
+  "version": "0.0.1",
+  "homepage": "https://github.com/DangelZM/PolymerSite",
+  "authors": [
+    "Ivan <dangelzm@gmail.com>"
+  ],
+  "description": "Example Polymer site",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-elements": "PolymerElements/iron-elements#~1.0.4",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.5",
+    "page": "visionmedia/page.js#~1.6.4",
+    "google-map": "GoogleWebComponents/google-map#~1.1.4"
+  }
+}

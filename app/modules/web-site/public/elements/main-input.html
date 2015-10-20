@@ -1,0 +1,48 @@
+<dom-module id="main-input">
+    <style>
+        :host {
+            display: block;
+        }
+        paper-material {
+            background: #fff;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            padding: 10px;
+            min-height: 30px;
+        }
+        #input {
+            box-sizing: border-box;
+            min-height: 30px;
+            height: 100%;
+            background: #efefef;
+            border: 1px solid #cccccc;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            padding: 5px;
+            font-size: 12px;
+            line-height: normal;
+        }
+        #input:empty:before {
+            content: attr(placeholder);
+            display: block;
+            color: #888;
+        }
+    </style>
+    <template>
+        <paper-material>
+            <div id="input" contenteditable="true" placeholder="Enter new post here..."></div>
+        </paper-material>
+    </template>
+    <script>
+        Polymer({
+            is: "main-input",
+            properties: {
+                route: {
+                    type: String
+                }
+            }
+        });
+    </script>
+</dom-module>

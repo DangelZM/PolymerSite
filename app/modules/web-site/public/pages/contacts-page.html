@@ -1,0 +1,28 @@
+<dom-module id="contacts-page">
+    <style>
+        :host {
+            display: block;
+        }
+        paper-material {
+            background: #fff;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            padding: 10px;
+            min-height: 30px;
+        }
+        google-map {
+            height: 400px;
+        }
+    </style>
+    <template>
+        <paper-material>
+            <google-map latitude="49.44444" longitude="32.05972"></google-map>
+        </paper-material>
+    </template>
+    <script>
+        Polymer({
+            is: 'contacts-page'
+        });
+    </script>
+</dom-module>

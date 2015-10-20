@@ -1,0 +1,77 @@
+<dom-module id="app-sidebar">
+    <style>
+        .user-profile {
+            width: 100%;
+            height: auto;
+        }
+        paper-material {
+            background: #fff;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            padding: 10px;
+        }
+        .avatar {
+            margin-bottom: 10px;
+        }
+        .photo > img{
+            width: 100%;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+        .username {
+            text-align: center;
+        }
+        .slogan {
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+        .info {
+            font-size: 14px;
+        }
+        .info iron-icon {
+            margin-right: 5px;
+            --iron-icon-height: 16px;
+            --iron-icon-width: 16px;
+        }
+    </style>
+    <template>
+        <div class="user-profile">
+            <paper-material class="avatar">
+                <div class="photo"><img src$="{{user.photo}}" /></div>
+                <div class="username">{{user.fullname}}</div>
+            </paper-material>
+            <paper-material class="info">
+                <div class="slogan">{{user.slogan}}</div>
+                <div class="country"><iron-icon icon="room"></iron-icon><span>{{user.country}}</span></div>
+                <div class="website"><iron-icon icon="link"></iron-icon><a href$="{{user.website.url}}">{{user.website.title}}</a></div>
+                <div class="createdAt"><iron-icon icon="schedule"></iron-icon>Дата регистрации: <span>{{user.createdAt}}</span></div>
+            </paper-material>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: "app-sidebar",
+            properties: {
+                route: {
+                    type: String
+                },
+                user: {
+                    type: Object,
+                    value: {
+                        fullname: "Ivan Zmerzlyi",
+                        photo: "https://pbs.twimg.com/profile_images/499094673810415616/HaFE_7P_.jpeg",
+                        slogan: "I'm Full stack web developer. Problem Solver. I specialise in web design and development.",
+                        country: "Ukraine",
+                        website: {
+                            title: "ivan.zmerzlyi.me",
+                            url: "http://ivan.zmerzlyi.me"
+                        },
+                        createdAt: "ноябрь 2010"
+                    }
+                }
+            }
+        });
+    </script>
+</dom-module>
